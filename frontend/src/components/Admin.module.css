@@ -1,8 +1,314 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
 /* General container styles */
 .container {
+    background-color: #F4F4F9;
+    padding: 48px; 
+}
+/* 
+.containerr {
+    height: 100vh;
+} */
+
+/* Content area */
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.firstContainer {
+    display: grid;
+    flex-wrap: wrap;
+    /* Allow wrapping for smaller screens */
+    gap: 36px;
+    /* Reduced gap for smaller screens */
+    justify-content: space-between;
+    /* Space out items */
+    grid-template-columns: 3fr 1fr;
+}
+
+.upcomingEventsCard {
+    position: relative;
+    height: auto;
+    max-height: 500px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    /* Allow it to take remaining space */
+    max-width: 100%;
+    /* Full width on small screens */
+    min-width: 300px;
+    /* Ensure it doesn’t shrink too much */
+}
+
+.upcomingEventImage {
+    width: 100%;
+    /* Full width of container */
+    height: 100%;
+    /* Full height of container */
+    object-fit: cover;
+    /* Ensure the image fills the container and maintains aspect ratio */
+    object-position: center;
+    /* Center the image in the container */
+    display: block;
+    /* Avoid inline gaps */
+    border-radius: 16px;
+    /* Maintain rounded corners */
+}
+
+.gradientOverlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 36px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    color: #fff;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    justify-content: flex-end;
+}
+
+.upcomingEventsText {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.eventDetails {
+    font-size: 16px;
+}
+
+
+/* Slideshow styles */
+/* .slideshow {
+    width: 60%;
+    text-align: center;
+}
+
+.slideshowContainer {
+    position: relative;
+}
+
+.navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.slideshowImage {
+    width: 100%;
+    height: auto;
+} */
+
+/* Calendar styles */
+/* .calendar {
+    width: 35%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+
+/* Venue booklist container */
+.venueBooklistContainer {
+    background-color: white;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    border-radius: 16px;
+    margin-top: 48px;
+}
+
+.sidebarrContainer {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+}
+
+.sidebarr {
+    display: flex;
+    flex-direction: column;
+    max-height: 400px;
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+    gap: 4px;
+}
+
+.sidebarr button {
+    padding: 16px 8px;
+    border-radius: 0px;
+    border: none;
+    cursor: pointer;
+    background-color: #0e4296;
+    color: white;
+    transition: 0.15s;
+    border-radius: 8px;
+}
+
+.sidebarr button:hover {
+    background-color: #0e4296bc;
+
+}
+
+.header {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.newSidebarContainer {
+    padding: 20px;
+}
+
+.addEventButton {
+    background-color: #0e4296;
+    padding: 8px 16px;
+    color: white;
+    border-radius: 8px;
+    margin-top: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.addEventButton:hover {
+    background-color: #0e4296bc;
+}
+
+/* VMGO */
+.mergedSection {
+    background-color: white;
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 16px;
+    padding: 64px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+.vgmoHeader {
+    color: #154c79;
+    margin-bottom: 8px;
+}
+
+.layoutContainer {
+    margin-top: 48px;
+    display: block;
+    gap: 36px;
+    width: 100%;
+}
+
+.leftSection {
+    background-color: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    color: #154c79;
+}
+
+.sidebarContainer {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 8px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    max-height: 400px;
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+    gap: 4px;
+}
+
+.sidebar button {
+    padding: 16px 8px;
+    border-radius: 0px;
+    border: none;
+    cursor: pointer;
+    background-color: #0e4296;
+    color: white;
+    transition: 0.15s;
+    border-radius: 8px;
+}
+
+.sidebar button:hover {
+    background-color: #0e4296bc;
+
+}
+
+.vgmo:not(:last-child) {
+    margin-bottom: 32px;
+}
+
+/* Modal overlay */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+}
+
+/* Form group styles */
+.formGroup {
+    margin-bottom: 10px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Modal footer */
+.modalFooter {
+    display: flex;
+    justify-content: space-between;
+}
+
+.submitButton {
+    background-color: #0e4296;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.cancelButton {
+    background-color: #ccc;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
 }
 
 /* Navbar styles */
@@ -10,60 +316,125 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #0e4296;
+    padding: 24px 96px;
+    background-color: #063970;
     color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin: 0px;
 }
+
 
 .navTitle {
     font-size: 1.5rem;
 }
 
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
 .logo {
     width: 48px;
     height: 48px;
-  }
+}
+
+.titleflex {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+}
+
+.title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.subtitle {
+    margin-top: -8px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
   
   .loginIcon {
     width: 24px;
     height: 24px;
   }
 
-.logoutButton {
-    padding: 10px 20px;
-    background-color: #fff;
-    color: #0e4296;
+  .logoutButton {
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: #063970;
     border: none;
+    gap: 4px;
+    font-size: 16px;
     cursor: pointer;
-    border-radius: 5px;
 }
 
+.loginIcon {
+    width: 24px;
+    height: 24px;
+}
 /* Main area styles */
 .main {
+    position: relative;
+    min-height: 86.6vh;
     display: flex;
     flex-direction: row;
-    flex-grow: 1;
-    padding: 20px;
     background-color: #f4f4f9;
+    margin-top: 96px;
+    gap: 24px;  
 }
 
-.sidebar {
-    width: 200px;
-    background-color: #0e4296;
-    color: #fff;
-    padding: 20px;
+.sidebarrr {
+    background-color: white;
+    padding: 24px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+    max-width: 400px;
+    position: relative;
 }
 
 .sidebarList {
     list-style: none;
     padding: 0;
     margin: 0;
+    position: sticky;
+    top: 132px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-.sidebarItem {
-    padding: 10px 20px;
+.sidebarList li {
+    padding: 12px 16px;
     cursor: pointer;
-    margin-bottom: 10px;
+    /* background-color: ; */
+    display: flex;
+    align-items: center;
+    transition: 0.15s;
+    border-radius: 16px;
+}
+
+.sidebarList li:hover {
+    background-color: #f4f4f9;
+}
+
+.Icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
 }
 
 .activeSidebarItem {
@@ -72,10 +443,9 @@
 
 /* Content styles */
 .content {
-    flex-grow: 1; 
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: auto; 
 }
 
 /* Table styles */
@@ -170,4 +540,48 @@
     cursor: pointer;
     border-radius: 5px;
     margin-top: 10px;
+}
+
+.eventTitle{
+    font-size: 24px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.councilTitle{
+    font-size: 24px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.usersTitle{
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.addCouncilButtonContainer{
+    padding: 10px;
+    margin-left: 20px;
+}
+.addCouncilButton{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    color: white;
+    background-color: #063970;
+    border-radius:  4px;
+    gap: 4px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+@media (max-width: 1490px) {
+    .firstContainer {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
 }

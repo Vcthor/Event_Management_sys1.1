@@ -1,17 +1,17 @@
-/* General container styles */
-.container {
-    background-color: #f9f9f9;
-    padding: 48px 96px;
-}
-
 /* Navbar styles */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 24px 96px;
-    background-color: #063970;
+    background-color: #0e4296;
     color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .logoContainer {
@@ -58,6 +58,13 @@
     cursor: pointer;
 }
 
+/* General container styles */
+.container {
+    background-color: #f9f9f9;
+    padding: 48px 96px;
+    margin-top: 96px;
+}
+
 /* Content area */
 .content {
     display: flex;
@@ -66,13 +73,14 @@
 }
 
 .firstContainer {
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
     /* Allow wrapping for smaller screens */
     gap: 36px;
     /* Reduced gap for smaller screens */
     justify-content: space-between;
     /* Space out items */
+    grid-template-columns: 3fr 1fr;
 }
 
 .upcomingEventsCard {
@@ -239,6 +247,7 @@
     border-radius: 16px;
     padding: 64px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
 }
 
 .vgmoHeader {
@@ -354,10 +363,153 @@
     cursor: pointer;
 }
 
+.subFooter{
+    padding: 40px;
+    font-size: 12px;
+    background-color: #121518;
+    color: white;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+  }
+  
+  
+  .aboutTitle{
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .aboutSubtitle{
+    font-size: 12px;
+    max-width: 500px;
+    min-width: 200px;
+    width: 100%;
+    white-space: normal;
+  }
+  .connectTitle{
+    font-size: 16px;
+  }
+
 .footer {
     text-align: center;
     padding: 10px 0;
-    background-color: #063970;
+    background-color: #000000;
     color: #fff;
-    border-top: 1px solid #ccc;
+    font-size: 12px;
+  }
+
+  @media (max-width: 930px) {
+    .container {
+      padding: 24px 16px;
+    }
+
+    .firstContainer {
+        display: flex;
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items */
+    }
+  
+    .upcomingEventsCard {
+      max-width: 100%; /* Full width on smaller screens */
+      margin: 0; /* Remove side margin */
+    }
+    
+    .calendarTitle{
+        text-align: center;
+    }
+    .calendar {
+        width: 60%;
+        height: auto;
+    }
+  
+    .calendarContainer {
+      flex: 0 0 auto; /* Fixed width of 300px */
+      max-width: none;
+      min-width: auto;
+      gap: 24px;
+      width: 100%;
+      padding: 48px;
+      border-radius: 16px;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      display: block;
+      box-sizing: border-box;
+    }
+    .eventsList {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .aboutSubtitle{
+        font-size: 12px;
+        max-width: 400px;
+        min-width: 100px;
+    }
+  }
+
+@media (max-width: 426px) {
+  .navbar {
+    padding: 24px 16px;
+  }
+
+  .title {
+    font-size: 1em;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-size: 0.75em;
+  }
+  
+  .logoutButton {
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: #0e4296;
+    border: none;
+    gap: 4px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .mergedSection{
+    font-size: 12px;
+  }
+  .footer{
+    font-size: 8px;
+  }
+  .sidebar{
+    font-size: 12px;
+  }
+  .upcomingEventsText{
+    font-size: 16px;
+  }
+  .eventDate{
+    font-size: 12px;
+  }
+  .eventName{
+    font-size: 12px;
+  }
+  .calendarTitle{
+    font-size: 20px;
+    text-align: center;
+  }
+  .calendarDate{
+    font-size: 12px;
+    
+  }
+  .header{
+    font-size: 16px;
+  }
+  .sidebarContent{
+    font-size: 12px;
+  }
+  .newsItem{
+    font-size: 12px;
+  }
+  .subFooter{
+    display: flex;
+      flex-direction: column;
+  }
 }
