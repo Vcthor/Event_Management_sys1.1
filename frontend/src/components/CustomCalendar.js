@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
-import styles from "./Customcal.css";
+import styles from "./CustomCalendar.module.css";
 
 const CustomCalendar = () => {
   const [selectedDate, setSelectedDate] = useState(null); // Store selected date

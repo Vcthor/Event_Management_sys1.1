@@ -173,8 +173,8 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className={styles.calendar}>
-            <h1>Campus Calendar</h1>
+          <div className={styles.calendarDate}>
+            <h1 className={styles.calendarTitle}>Campus Calendar</h1>
             <CustomCalendar />
           </div>
         </div>
@@ -410,6 +410,17 @@ const Dashboard = () => {
             </div>
           </div>
         )}
+      </div>
+      <div className={styles.subFooter}>
+        <div className={styles.about}>
+          <h4 className={styles.aboutTitle}>About Us</h4>
+          <p className={styles.aboutSubtitle}>
+            This Event Booking System was created by the undergraduate students
+            of BS-CpE 4 as their thesis project.
+          </p>
+        </div>
+        <h5 className={styles.connectTitle}>Connect</h5>
+          
       </div>
       {/* Footer */}
       <footer className={styles.footer}>
